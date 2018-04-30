@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'rest_db',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': '123456',
-        'HOST': '127.0.0.1', # Or an IP Address that your DB is hosted on
-        'PORT': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     },
 }
 
@@ -127,4 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }

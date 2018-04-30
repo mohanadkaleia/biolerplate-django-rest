@@ -22,3 +22,17 @@ class Student(models.Model):
         verbose_name_plural = "Students"
     def __str__(self):
         return '%s %s' %(self.first_name, self.last_name)
+
+class Puppy(models.Model):
+    name = models.CharField(max_length = 50)
+    age = models.IntegerField()
+    breed = models.CharField(max_length = 255)
+    color = models.CharField(max_length = 255)
+    created_at = models.DateField(auto_now_add=True)
+    updateed_at = models.DateField(auto_now=True)
+
+    def get_breed(self):
+        return self.name + ' belongs to ' + self.breed + 'breed.'
+
+    def __repr__(self):
+        return self.name + ' is added.'

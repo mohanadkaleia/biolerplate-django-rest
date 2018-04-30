@@ -1,7 +1,8 @@
 from django.test import TestCase
-from .models import Puppy
-# Create your tests here.
-class ModelTestCase(TestCase):
+from ..models import Puppy
+
+
+class PuppyTest(TestCase):
     """ Test module for Puppy model """
 
     def setUp(self):
